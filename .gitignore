@@ -1,0 +1,68 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-*
+.cursor/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+.~*
+
+# Node.js (if using any JS tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if using any Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+
+# Data and Work Files
+# These patterns ensure data stays separate from system
+/data/
+/workspace/
+/archive/
+
+# Local Configuration
+.env.local
+.env.*.local
+config.local.yaml
+*.local
+
+# Build Outputs
+/dist/
+/build/
+/out/
+
+# Coverage and Test Results
+coverage/
+.coverage
+htmlcov/
+*.cover
+.pytest_cache/
+
+# Logs
+logs/
+*.log
+
+# Secrets and Credentials
+*.key
+*.pem
+*.cert
+credentials.json
+secrets.yaml
