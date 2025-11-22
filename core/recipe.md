@@ -2,7 +2,7 @@
 type: system-component
 component: core
 name: Main Recipe - Signal-to-Action Pipeline
-version: 1.0.0
+version: 1.1.0
 dependencies: [knowledge-index, protocols/evidence-first, protocols/dcrl, templates/executive-summary, templates/action-items, templates/brainstorm]
 related: [meta-recipe.md, recipe-summary.md, overview-of-recipe.md]
 parent: signal-to-action-system
@@ -71,7 +71,37 @@ creative fuel.
   - Meeting transcripts (`.vtt` files with speakers/timestamps)
   - Agile stories (JIRA tickets, user stories, acceptance criteria)
   - Product specs (PRDs, technical specifications, design docs)
+  - **JIRA via MCP:** Direct fetch using JIRA URL (NEW)
 - Workspace target directory (e.g., `.../PARENT_DIRECTORY/`)
+
+### A.0) JIRA MCP Integration (for JIRA stories)
+
+When processing JIRA stories, use the MCP integration for seamless fetching:
+
+**Input Format:**
+```
+Source: https://cisco-sbg.atlassian.net/browse/XDR-XXXXX
+Method: JIRA MCP fetch
+```
+
+**Automated Process:**
+1. Use JIRA MCP to fetch story details directly
+2. System extracts:
+   - Story title and description
+   - Acceptance criteria (primary UX focus)
+   - Technical notes (supporting context)
+   - Linked issues/dependencies
+3. Automatically classify with UX-centric hierarchy:
+   - **Primary**: User stories, acceptance criteria, UX requirements
+   - **Supporting**: Technical implementation notes
+   - **Background**: API details, database changes
+
+**Benefits over manual copy-paste:**
+- No context switching to browser
+- Preserves formatting and structure
+- Maintains JIRA links and references
+- Automatic UX signal extraction
+- 5-10x faster than manual process
 
 ### A.1) Notes on creating arrtifact outputs in markdown (.md)
 
@@ -83,6 +113,12 @@ creative fuel.
 **For transcripts:** Parse speaker statements into 10-15 concise takeaways; include key decisions,
 open questions **For stories/specs:** Extract key decisions, requirements, constraints, and open
 questions
+
+**For JIRA stories (via MCP):** Apply UX-centric extraction:
+- **Primary extraction**: User stories, acceptance criteria, user impact statements
+- **Secondary extraction**: Technical constraints that affect UX
+- **Background only**: Implementation details, API specs, database schemas
+- Automatically elevate any mention of: user experience, workflows, interactions, UI/UX
 
 - Focus on outcomes, decisions, implications (not process details), ensure the UX leader is informed
   on everything in his purview/responsibility/accountability
@@ -174,7 +210,7 @@ questions
 
 ### Frontmatter (required at top of executive summaries)
 
-Note: `created` must reflect the source artifact’s date (recording/publication), not the date you
+Note: `created` must reflect the source artifact's date (recording/publication), not the date you
 ran this procedure.
 
 ```
@@ -187,6 +223,10 @@ scope: <meeting|story|spec>
 audience: <me|team|leadership>
 polish: <scratch|team-ready|leadership-ready>
 version: 1
+# Additional fields for JIRA MCP sources:
+jira_url: <https://instance.atlassian.net/browse/KEY-123>  # If from JIRA
+fetch_method: <manual|jira-mcp>  # How source was obtained
+ux_extraction: <primary|supporting>  # UX focus level
 ---
 ```
 
@@ -924,11 +964,37 @@ A 2–4 line summary of the problem or meeting objective and the source file pat
 - `AI-UX-Guild-20250811-action-items.md`
 - `AI-UX-Guild-20250811-brainstorm.md`
 - `Brainstorming Exercise 2025-08-11.md`
+- `XDR-41258-2025-11-22-executive-summary.md` (from JIRA MCP)
+- `XDR-41258-2025-11-22-action-items.md` (from JIRA MCP)
 
 # Add 2 final documents
 
 1. Generate a worksheet doc
 2. Roll up multiple sessions into a combined action-items with rollup_of.
+
+## JIRA MCP Workflow Example
+
+### Quick UX Planning from JIRA Story
+
+**Input:**
+```
+"Find XDR-41258 and create UX approach"
+```
+
+**Automated Process:**
+1. **Fetch via MCP**: `jira_query XDR-41258`
+2. **Run recipe with UX focus**:
+   ```
+   Focus: ux-xdr (automatic for JIRA stories)
+   UX extraction: primary
+   ```
+3. **Outputs generated**:
+   - Executive Summary: UX requirements elevated, tech details backgrounded
+   - Action Items: Design tasks first, supporting tech tasks marked clearly
+   - Brainstorm: User-centered solutions using DCRL
+
+**Time savings**: 5 minutes vs 30+ minutes manual process
+**Cognitive savings**: Stay in design mode throughout
 
 ---
 

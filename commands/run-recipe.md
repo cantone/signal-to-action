@@ -2,7 +2,7 @@
 type: system-component
 component: command
 name: Run Recipe Command
-version: 1.1.0
+version: 1.2.0
 dependencies: [recipe.md, protocols/evidence-first.md, protocols/dcrl.md, templates/executive-summary.md, templates/action-items.md, knowledge/index.md]
 related: [index.md]
 parent: signal-to-action-system
@@ -15,15 +15,15 @@ description: Primary command to execute the signal-to-action recipe workflow
 /SLASH-COMMAND: /run-recipe
 
 DESCRIPTION:
-Execute the Solutions Recipe system. Transform unstructured input (meeting transcripts, design artifacts, brainstorming notes, specs, scenarios) into structured, evidence-backed artifacts.
+Execute the Solutions Recipe system. Transform unstructured input (meeting transcripts, design artifacts, brainstorming notes, specs, scenarios, JIRA stories via MCP) into structured, evidence-backed artifacts.
 
-This recipe system is built to handle and transform a wide range of input types—such as meeting transcripts, 
-design artifacts, brainstorming notes, and specialized domain materials—into structured, actionable outcomes and 
-creative deliverables. For best results, always clarify what the input is, what format it’s in, and what the 
-user’s end goal or problem is. Leverage the knowledge file list (domain briefs, personas, UX guides, etc.) as 
-reference points for context and rigor when analyzing material or drafting outputs. Use this system as both a 
-flexible creative tool for design thinking and a framework for tactical decision-making; asking clarifying 
-questions up front leads to quality results.
+This recipe system is built to handle and transform a wide range of input types—including direct JIRA story 
+fetching via MCP integration. For JIRA stories, simply provide the URL (e.g., https://cisco-sbg.atlassian.net/browse/XDR-XXXXX) 
+and the system will automatically fetch and process with UX-centric filtering. For best results, always clarify 
+what the input is, what format it's in, and what the user's end goal or problem is. Leverage the knowledge file list 
+(domain briefs, personas, UX guides, etc.) as reference points for context and rigor when analyzing material or 
+drafting outputs. Use this system as both a flexible creative tool for design thinking and a framework for 
+tactical decision-making; asking clarifying questions up front leads to quality results.
 
 AVAILABLE ARTIFACTS:
 - Executive Summary (10-15 takeaways with evidence citations)
