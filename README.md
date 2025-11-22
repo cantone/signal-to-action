@@ -1,10 +1,12 @@
 # Signal-to-Action System
 
-> Transform unstructured inputs into structured, evidence-backed artifacts using natural language recipes.
+> A force multiplier for overwhelmed UX professionals - transform unstructured inputs into structured, evidence-backed artifacts using natural language recipes.
 
 ## Overview
 
-The Signal-to-Action system is a comprehensive framework for converting meeting transcripts, JIRA stories, specifications, and other unstructured inputs into actionable outputs. Built with a "natural language first" philosophy, it enables both humans and LLMs to process information systematically while maintaining full traceability.
+The Signal-to-Action system was born out of necessity. As the sole UX resource on an immensely large and complex project with hundreds of engineers across the platform, I needed a way to do more with less. This framework converts meeting transcripts, JIRA stories, specifications, and other unstructured inputs into actionable outputs at scale.
+
+Built with a "natural language first" philosophy, it enables a single person (with minimal help from time-constrained colleagues) to systematically process information while maintaining full traceability. It's not just about organization - it's about survival and effectiveness in enterprise-scale environments.
 
 ## Key Features
 
@@ -52,22 +54,37 @@ signal-to-action/
 └── reference/            # Specifications
 ```
 
+## The Challenge This Solves
+
+As a sole UX resource supporting hundreds of engineers:
+
+- **Information Overload**: Multiple meetings daily, each generating hours of discussion
+- **Context Switching**: Jumping between numerous projects and teams
+- **Documentation Debt**: No time to properly document decisions and rationale
+- **Scalability Crisis**: Being asked to cover more features with the same (or less) time
+- **Evidence Gaps**: Decisions questioned months later with no clear trail
+- **Collaboration Barriers**: Team members equally overwhelmed, minimal bandwidth to help
+
 ## Use Cases
 
-- **Meeting to Actions**: Transform transcripts into concrete next steps
-- **Story to Design**: Convert JIRA stories into design specifications
-- **Spec to Technical Plan**: Extract implementation tasks from PRDs
-- **Brainstorming**: Generate creative solutions from constraints
+- **Meeting to Actions**: Transform transcripts into concrete next steps without manual note-taking
+- **Story to Design**: Convert JIRA stories into design specifications in minutes, not hours
+- **Spec to Technical Plan**: Extract implementation tasks from PRDs systematically
+- **Brainstorming**: Generate creative solutions from constraints when you're the only designer
+- **Stakeholder Alignment**: Create evidence-backed summaries for leadership in standardized formats
+- **Design Rationale**: Maintain decision trails for when "why did we do it this way?" comes up
 
 ## Philosophy
 
-This system embraces several key principles:
+This system embraces several key principles born from real-world pressure:
 
-1. **Natural Language First**: Instructions should be readable by humans, not just machines
-2. **Evidence-Based**: No claims without citations
-3. **Modular Design**: Components should be reusable and composable
-4. **Quality Over Speed**: Better to be accurate than fast
-5. **Human + AI**: Designed for collaboration, not replacement
+1. **Natural Language First**: No time to learn complex syntax - instructions must be readable by humans, not just machines
+2. **Evidence-Based**: When you're outnumbered 100:1, every design decision needs bulletproof citations
+3. **Modular Design**: Reuse everything possible - build once, apply everywhere
+4. **Speed WITH Quality**: Can't afford to be slow OR wrong when supporting hundreds of engineers
+5. **Human + AI**: AI as a force multiplier, not replacement - augment one person to do the work of a team
+6. **Minimal Dependencies**: Works with limited help from time-constrained colleagues
+7. **Scale Through Systems**: If it's not systematic, it won't scale
 
 ## Documentation
 
@@ -75,14 +92,27 @@ This system embraces several key principles:
 - [STRUCTURE.md](STRUCTURE.md) - Complete architecture guide
 - [Reference Docs](reference/) - Specifications and standards
 
+## Impact for Solo UX Practitioners
+
+Using this system, a single UX resource can:
+
+- **Process 5-10x more meetings**: Turn hour-long transcripts into actionable outputs in ~20 minutes
+- **Maintain consistency**: Every output follows the same high-quality structure
+- **Build institutional memory**: Decisions are documented with evidence, not lost in chat
+- **Scale influence**: Cover more teams by systematizing common workflows
+- **Reduce cognitive load**: Let the system handle structure while you focus on design
+- **Defend decisions**: Every recommendation traces to source material
+
 ## Contributing
 
-This system is designed to be extended. To add new capabilities:
+This system is designed to be extended by busy practitioners:
 
-1. **New Recipes**: Add variants in `core/recipes/`
-2. **New Protocols**: Create processing rules in `components/protocols/`
-3. **New Templates**: Design output formats in `components/templates/`
-4. **New Gates**: Add decision logic in `components/gates/`
+1. **New Recipes**: Add variants in `core/recipes/` for your specific workflows
+2. **New Protocols**: Create processing rules in `components/protocols/` for your domain
+3. **New Templates**: Design output formats in `components/templates/` for your deliverables
+4. **New Gates**: Add decision logic in `components/gates/` for your context
+
+Remember: Every improvement helps another overwhelmed UX professional do more with less.
 
 ## Related Systems
 
